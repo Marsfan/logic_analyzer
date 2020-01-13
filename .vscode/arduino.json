@@ -1,0 +1,6 @@
+{
+    "board": "SparkFun:apollo3:amap3atp",
+    "sketch": "logic_analyzer.ino",
+    "configuration": "svl_baud=921600,loader=sparkfun_svl",
+    "port": "COM6"
+}

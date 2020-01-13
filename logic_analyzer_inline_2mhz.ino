@@ -60,7 +60,7 @@ void captureInline2mhz() {
    * we cannot afford any timing interference so we absolutely
    * cannot have any interrupts firing.
    */
-  cli();
+  noInterrupts();
 
   /*
    * toggle pin a few times to activate trigger for debugging.
@@ -88,7 +88,7 @@ void captureInline2mhz() {
    */
 
 #undef INLINE_NOP
-#define INLINE_NOP		__asm__("nop\n\t""rjmp 1f\n\t""1:\n\t""rjmp 2f\n\t""2:\n\t");
+#define INLINE_NOP		__asm__("nop\n\t""nop\n\t""1:\n\t""nop\n\t""2:\n\t");
 
   logicdata[0] = CHANPIN;
   INLINE_NOP;
@@ -2140,7 +2140,7 @@ void captureInline2mhz() {
   logicdata[1023] = CHANPIN;
   INLINE_NOP;
 #endif
-#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__) 
+#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
   logicdata[1024] = CHANPIN;
   INLINE_NOP;
   logicdata[1025] = CHANPIN;
@@ -14435,7 +14435,7 @@ void captureInline2mhz() {
   DEBUG_OFF; /* debug timing measurement */
 
   /* re-enable interrupts now that we're done sampling. */
-  sei();
+  interrupts();
 
   /*
    * dump the samples back to the SUMP client.  nothing special
