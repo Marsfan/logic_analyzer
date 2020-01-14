@@ -3,16 +3,18 @@
         {
             "name": "Win32",
             "includePath": [
-                "C:\\Users\\Gabe\\AppData\\Local\\Arduino15\\packages\\SparkFun\\hardware\\apollo3\\1.0.24\\**",
-                "C:\\Users\\Gabe\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",
-                "C:\\Users\\Gabe\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.6.3\\**",
-                "C:\\Users\\Gabe\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
-                "C:\\Users\\Gabe\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.2\\**",
-                "C:\\Users\\Gabe\\AppData\\Local\\Arduino15\\packages\\SparkFun\\tools\\**",
-                "C:\\Users\\Gabe\\AppData\\Local\\Arduino15\\packages\\SparkFun\\hardware\\apollo3\\1.0.23\\**"
+                "${env:ARDUINO_INSTALL}\\Arduino15\\packages\\SparkFun\\hardware\\apollo3\\1.0.24\\**",
+                "${env:ARDUINO_INSTALL}\\Arduino15\\packages\\esp8266\\tools\\**",
+                "${env:ARDUINO_INSTALL}\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.6.3\\**",
+                "${env:ARDUINO_INSTALL}\\Arduino15\\packages\\arduino\\tools\\**",
+                "${env:ARDUINO_INSTALL}\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.2\\**",
+                "${env:ARDUINO_INSTALL}\\Arduino15\\packages\\SparkFun\\tools\\**",
+                "${env:ARDUINO_INSTALL}\\packages\\SparkFun\\hardware\\apollo3\\1.0.24\\**"
             ],
-            "forcedInclude": [],
-            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
+            "forcedInclude": [
+                "${env:ARDUINO_INSTALL}\\packages\\SparkFun\\hardware\\apollo3\\1.0.24\\cores\\arduino\\ard_sup\\Arduino.h"
+            ],
+            "compilerPath": "${env:ARDUINO_INSTALL}\\hardware\\tools\\avr\\bin\\avr-gcc.exe",
             "cppStandard": "c++17"
         }
     ],
