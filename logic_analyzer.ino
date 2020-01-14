@@ -94,8 +94,8 @@
 #define DEBUG_OFF digitalWrite(ARD8, LOW)
 
 
-#define DEBUG_MENU
-#define DEBUG
+//#define DEBUG_MENU
+//#define DEBUG
 
 #ifdef DEBUG
 #define MAX_CAPTURE_SIZE DEBUG_CAPTURE_SIZE
@@ -137,8 +137,9 @@ void setup()
    * the sample time.  this is used during development to
    * properly pad out the sampling routines.
    */
+  #ifdef DEBUG
   DEBUG_ENABLE; /* debug measurement pin */
-
+#endif
   pinMode(CHAN0, INPUT);
   pinMode(CHAN1, INPUT);
   pinMode(CHAN2, INPUT);
@@ -451,16 +452,18 @@ void captureMicro() {
    * any timing unexpectedly.
    * Arduino digital pin 8 is being used here.
    */
-  DEBUG_ENABLE;
+
+
 #ifdef DEBUG
-  DEBUG_ON;
-  delayMicroseconds(20);
-  DEBUG_OFF;
-  delayMicroseconds(20);
-  DEBUG_ON;
-  delayMicroseconds(20);
-  DEBUG_OFF;
-  delayMicroseconds(20);
+    DEBUG_ENABLE;
+    DEBUG_ON;
+    delayMicroseconds(20);
+    DEBUG_OFF;
+    delayMicroseconds(20);
+    DEBUG_ON;
+    delayMicroseconds(20);
+    DEBUG_OFF;
+    delayMicroseconds(20);
 #endif
 
   if (delayTime == 1) {
@@ -624,16 +627,17 @@ void triggerMicro() {
    * any timing unexpectedly.
    * Arduino digital pin 8 is being used here.
    */
-  DEBUG_ENABLE;
 #ifdef DEBUG
-  DEBUG_ON;
-  delayMicroseconds(20);
-  DEBUG_OFF;
-  delayMicroseconds(20);
-  DEBUG_ON;
-  delayMicroseconds(20);
-  DEBUG_OFF;
-  delayMicroseconds(20);
+    DEBUG_ENABLE;
+
+    DEBUG_ON;
+    delayMicroseconds(20);
+    DEBUG_OFF;
+    delayMicroseconds(20);
+    DEBUG_ON;
+    delayMicroseconds(20);
+    DEBUG_OFF;
+    delayMicroseconds(20);
 #endif
 
   if (delayTime == 1) {
