@@ -89,7 +89,7 @@
 #define DEBUG_CAPTURE_SIZE 1024
 #define CAPTURE_SIZE 1024
 
-#define DEBUG_ENABLE pinMode(ARD8, INPUT)
+#define DEBUG_ENABLE pinMode(ARD8, OUTPUT)
 #define DEBUG_ON digitalWrite(ARD8, HIGH)
 #define DEBUG_OFF digitalWrite(ARD8, LOW)
 
