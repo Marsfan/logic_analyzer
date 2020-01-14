@@ -86,8 +86,8 @@
  */
 
 //FIXME: Switch capture size to 7168 for use with the artemis.
-#define DEBUG_CAPTURE_SIZE 532
-#define CAPTURE_SIZE 532
+#define DEBUG_CAPTURE_SIZE 1024
+#define CAPTURE_SIZE 1024
 
 #define DEBUG_ENABLE pinMode(ARD8, INPUT)
 #define DEBUG_ON digitalWrite(ARD8, HIGH)
